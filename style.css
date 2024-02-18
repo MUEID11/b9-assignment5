@@ -5,3 +5,10 @@
 .font-inter{
     font-family: "Inter", sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
+.select-container>tr{
+    display: flex;
+    justify-content: space-between;
+}
