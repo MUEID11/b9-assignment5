@@ -86,9 +86,9 @@
             also beyond the border, extending our reach to Kolkata in India.
           </p>
           <button
-            class="btn text-xl font-bold bg-[#1DD100] border-none mt-8 mb-10"
+            class="btn text-xl font-bold bg-[#1DD100] border-none mt-8 mb-10 transition duration-500 ease-in-out"
           >
-            <a href="">Buy Ticket</a>
+            <a href="#ticket-section">Buy Ticket</a>
           </button>
         </div>
       </section>
@@ -130,20 +130,20 @@
       </section>
       <!--offer section-->
       <section class="my-28">
-        <h3 class="text-center text-5xl font-bold mb-4 lg:mb-12 mb-6">
+        <h3 class="text-center text-5xl font-bold mb-4 lg:mb-12">
           Best offers for you
         </h3>
         <div class="lg:flex">
           <div
             class="bg-[#FFBF0F] flex justify-around items-center lg:w-1/2 rounded-3xl font-bold lg:mr-4 m-2 lg:m-0"
           >
-            <div class="space-y-4 font-inter p-5">
+            <div class="lg:space-y-4 font-inter p-5">
               <h4 class="lg:text-3xl text-2xl">15% OFF</h4>
               <h6 class="lg:text-2xl">on your next purchase</h6>
               <p class="text-gray-600 lg:text-xl">use by February 2024</p>
             </div>
             <div><img src="./images/cupon-devider.png" alt="" /></div>
-            <div class="space-y-4">
+            <div class="lg:space-y-4">
               <h4 class="lg:text-3xl text-2xl font-bold">NEW15</h4>
               <p class="text-gray-600 text-xl">Coupon code</p>
             </div>
@@ -151,13 +151,13 @@
           <div
             class="bg-[#F78C9C] flex justify-around items-center lg:w-1/2 rounded-3xl font-bold lg:ml-4 m-2 lg:m-0"
           >
-            <div class="space-y-4 font-inter p-5">
+            <div class="lg:space-y-4 font-inter p-5">
               <h4 class="lg:text-3xl text-2xl">20% OFF</h4>
               <h6 class="lg:text-2xl">on your next purchase</h6>
               <p class="text-gray-600 lg:text-xl">use by February 2024</p>
             </div>
             <div><img src="./images/cupon-devider.png" alt="" /></div>
-            <div class="space-y-4">
+            <div class="lg:space-y-4">
               <h4 class="lg:text-3xl text-2xl font-bold">COUPLE 20</h4>
               <p class="text-gray-600 text-xl">Coupon code</p>
             </div>
@@ -173,7 +173,10 @@
       </section>
     </header>
     <!--end of header start of main-->
-    <main class="rounded-t-3xl border-t-4 border-[#1DD100] bg-gray-100 pb-28">
+    <main
+      class="rounded-t-3xl border-t-4 border-[#1DD100] bg-[#1cd1000b] pb-28"
+      id="ticket-section"
+    >
       <section class="container mx-auto">
         <div class="text-center my-16">
           <h4 class="text-3xl font-bold">P.H Paribahan</h4>
@@ -182,24 +185,32 @@
             buy 4 tickets and get coupons and discount on your purchase
           </p>
         </div>
-        <div class="grid grid-cols-3 bg-white p-8 rounded-3xl mb-8">
+        <div
+          class="flex-col lg:grid grid-cols-3 bg-white lg:p-8 p-4 rounded-3xl mb-8"
+        >
           <div class="col-span-2 min-w-full">
-            <div class="flex justify-between">
-              <div class="flex">
+            <div class="lg:flex justify-between">
+              <div class="flex items-center">
                 <div class="mr-4">
                   <img src="./images/bus-logo.png" alt="" />
                 </div>
                 <div>
-                  <h4 class="text-2xl font-bold">Greenline Paribahan</h4>
+                  <h4 class="lg:text-2xl font-bold">Greenline Paribahan</h4>
                   <p class="text-gray-500">Coach-009-WEB ! AC_Business</p>
                 </div>
               </div>
               <div>
-                <button><img src="./images/seat-green.png" alt="" /></button>
+                <button
+                  class="btn w-full lg:w-40 lg:mt-0 mt-8 bg-[#1cd1001e] text-[#1cd100]"
+                >
+                  <img src="./images/seat-green.png" alt="" /><span id="seats"
+                    >40</span
+                  >Seats left
+                </button>
               </div>
             </div>
           </div>
-          <div class="col-span-2 bg-gray-100 rounded-2xl mt-10 p-8">
+          <div class="col-span-2 bg-[#1cd1000d] rounded-2xl mt-10 lg:p-8 p-2">
             <div>
               <div class="flex justify-between mb-4">
                 <p>Route</p>
@@ -212,25 +223,25 @@
               </div>
               <hr class="border-dashed mb-4" />
               <div class="flex justify-between">
-                <button class="btn bg-gray-200 w-1/4">
+                <button class="btn bg-[#1cd1001e] w-1/4">
                   Boarding Point - Laxmipur
                 </button>
-                <button class="btn bg-gray-200 w-1/4">
+                <button class="btn bg-[#1cd1001e] w-1/4">
                   Boarding Point - Durgapur
                 </button>
-                <button class="btn bg-gray-200 w-1/4">Est time: 11hr</button>
+                <button class="btn bg-[#1cd1001e] w-1/4">Est time: 11hr</button>
               </div>
             </div>
           </div>
           <div class="p-10 m-auto">
             <div class="text-center">
               <img class="h-full mx-auto" src="./images/fare.png" alt="" />
-              <h4 class="text-3xl font-bold"><span>550</span>Taka</h4>
-              <p class="text-xl text-gray-500">Per Seat</p>
+              <h4 class="lg:text-3xl font-bold"><span>550</span>Taka</h4>
+              <p class="lg:text-xl text-gray-500">Per Seat</p>
             </div>
           </div>
         </div>
-        <div class="grid grid-cols-3 bg-white p-8 rounded-3xl mb-8">
+        <div class="lg:grid grid-cols-3 bg-white p-8 rounded-3xl mb-8">
           <div class="col-span-2">
             <h4 class="text-2xl font-bold mb-4">Select your seat</h4>
             <div class="flex justify-between">
@@ -256,24 +267,73 @@
             </div>
             <div class="grid grid-cols-8">
               <div class="col-span-1">
-                <p class="text-xl my-10 text-gray-500">A</p>
-                <p class="text-xl my-10 text-gray-500">B</p>
-                <p class="text-xl my-10 text-gray-500">C</p>
-                <p class="text-xl my-10 text-gray-500">D</p>
-                <p class="text-xl my-10 text-gray-500">E</p>
-                <p class="text-xl my-10 text-gray-500">F</p>
-                <p class="text-xl my-10 text-gray-500">G</p>
-                <p class="text-xl my-10 text-gray-500">H</p>
-                <p class="text-xl my-10 text-gray-500">I</p>
-                <p class="text-xl my-10 text-gray-500">J</p>
+                <p class="text-xl my-10 text-gray-500 p-2">A</p>
+                <p class="text-xl my-10 text-gray-500 p-2">B</p>
+                <p class="text-xl my-10 text-gray-500 p-2">C</p>
+                <p class="text-xl my-10 text-gray-500 p-2">D</p>
+                <p class="text-xl my-10 text-gray-500 p-2">E</p>
+                <p class="text-xl my-10 text-gray-500 p-2">F</p>
+                <p class="text-xl my-10 text-gray-500 p-2">G</p>
+                <p class="text-xl my-10 text-gray-500 p-2">H</p>
+                <p class="text-xl my-10 text-gray-500 p-2">I</p>
+                <p class="text-xl my-10 text-gray-500 p-2">J</p>
               </div>
-              <div class="col-span-7 flex"></div>
+              <div class="col-span-7 flex justify-between">
+                <div>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    A1
+                  </p>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    B1
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    A2
+                  </p>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    B2
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    A3
+                  </p>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    B3
+                  </p>
+                </div>
+                <div>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    A4
+                  </p>
+                  <p
+                    class="text-xl my-10 text-gray-500 bg-gray-300 p-2 rounded-xl cursor-pointer"
+                  >
+                    B4
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-span-1 p-4">
+          <div class="col-span-1 lg:p-4">
             <h4 class="text-2xl font-bold mb-4">Select your seat</h4>
             <hr class="border-dashed mb-4" />
-            <div class="bg-gray-100 p-6 rounded-2xl">
+            <div class="bg-[#1cd1000d] p-6 rounded-2xl">
               <div class="flex justify-between mb-4">
                 <h6 class="text-xl font-bold">Seat</h6>
                 <h6 class="text-xl font-bold">Class</h6>
@@ -295,7 +355,7 @@
                   type="text"
                   placeholder="Type here"
                   class="input border-none input-accent w-full max-w-xs"
-                /><button class="btn bg-[#1DD100] text-xl text-white apply">
+                /><button class="btn bg-[#1DD100] lg:text-xl text-white apply">
                   Apply
                 </button>
               </div>
@@ -333,7 +393,7 @@
         </div>
       </section>
     </main>
-    <footer class="bg-gray-900  p-4 lg:p-0">
+    <footer class="bg-gray-900 p-4 lg:p-0">
       <section class="container mx-auto text-white">
         <div
           class="py-10 flex justify-between border-b-2 border-dashed border-gray-600"
