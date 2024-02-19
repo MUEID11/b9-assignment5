@@ -111,9 +111,7 @@ nextBtn.addEventListener('click', function(){
 
 closeBtn.addEventListener('click', function(){
     modalContainer.style.display = 'none';
-    phoneNumber.value = '';
-    passengerName.value = '';
-    passengerEmail.value = '';
+    window.location.reload();
 });
 
 window.addEventListener('click', function(e){
