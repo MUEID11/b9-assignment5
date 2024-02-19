@@ -1,19 +1,25 @@
 let totalSeat = 40;
 let seatCount = 0;
 let totalPrice = 0;
+let selectedSeat = null;
 const numberOfSeats = parseInt(
   document.getElementById("selected-seat").innerText
 );
 const phoneNumber = document.getElementById("phone-number");
 const couponField = document.getElementById("coupon-input");
-const seats = document.querySelectorAll(".seat");
+const passengerName = document.getElementById('passenger-name');
+const passengerEmail = document.getElementById('passenger-email');
 const applyBtn = document.getElementById("apply-btn");
 const nextBtn = document.getElementById("next-btn");
-const couponSection = document.getElementById('coupon-section')
+const couponSection = document.getElementById('coupon-section');
+const limitReached = document.getElementById('limit-reached');
+const seats = document.querySelectorAll(".seat");
 for (const seat of seats) {
   seat.addEventListener("click", function (e) {
     seat.style.backgroundColor = "#1DD100";
     seat.style.color = "white";
+    selectedSeat = seat;
+    selectedSeat.disabled = true;
     seatCount++;
     totalSeat--;
     phoneNumber.disabled = false;
@@ -38,8 +44,6 @@ for (const seat of seats) {
     grandTotal("grand-total", seatPrice);
     setInnerText("selected-seat", seatCount);
     setInnerText("seats", totalSeat);
-    seat.disabled = false;
-
     if (seatCount >= 4) {
       for (const seat of seats) {
         seat.disabled = true;
@@ -63,6 +67,7 @@ applyBtn.addEventListener("click", function () {
       getGrandTotal = getGrandTotal - discount;
       setInnerText("grand-total", getGrandTotal);
       setInnerText("discount", discount);
+      setInnerText('limit-reached', `You can't buy more then 4 tickets`);
       couponSection.style.display = 'none';
     } else if (couponCode === "COUPLE20") {
       const discount = getGrandTotal * 0.2;
@@ -70,6 +75,7 @@ applyBtn.addEventListener("click", function () {
       setInnerText("grand-total", getGrandTotal);
       setInnerText("discount", discount);
       couponSection.style.display = 'none';
+      setInnerText('limit-reached', `You can't buy more then 4 tickets`);
     } else {
       alert("Invalid coupon code");
     }
@@ -85,4 +91,34 @@ phoneNumber.addEventListener("input", function () {
   } else {
     nextBtn.disabled = true;
   }
+});
+//modal
+
+
+let modalContainer = document.getElementById('modal-container');
+let closeBtn = document.getElementById('close-btn');
+
+//Event Listeners
+let nextButtonClicked = false;
+nextBtn.addEventListener('click', function(){
+    modalContainer.style.display = 'block';
+    if(seatCount === 4 && !nextButtonClicked){
+        nextBtn.disabled = true;
+        nextButtonClicked = true;
+        setInnerText('limit-reached', `You can't buy more then 4 tickets`);
+    }
+});
+
+closeBtn.addEventListener('click', function(){
+    modalContainer.style.display = 'none';
+    phoneNumber.value = '';
+    passengerName.value = '';
+    passengerEmail.value = '';
+});
+
+window.addEventListener('click', function(e){
+
+    if (e.target === modalContainer){
+        modalContainer.style.display = 'none'
+    }
 });

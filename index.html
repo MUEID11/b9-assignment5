@@ -13,7 +13,14 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <!--font awesome-->
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body class="font-raleway">
     <header class="container mx-auto">
@@ -62,7 +69,8 @@
             </ul>
           </div>
           <div class="navbar-end">
-            <a href="ticket-section"
+            <a
+              href="#ticket-section"
               class="btn font-raleway text-[#1DD100] border-[#1DD100] bg-[#1cd10017]"
               >Bus <img src="./images/bus-icon.png" alt=""
             /></a>
@@ -263,7 +271,9 @@
             <hr class="my-4" />
             <div class="flex flex-col gap-6">
               <div class="w-full flex flex-row-reverse">
-                <button class="btn w-[140px]"><img class="h-full" src="./images/steering.png" alt=""></button>
+                <button class="btn w-[140px]">
+                  <img class="h-full" src="./images/steering.png" alt="" />
+                </button>
               </div>
               <div class="flex flex-col gap-5">
                 <div id="seats" class="flex lg:gap-14 justify-between">
@@ -395,7 +405,7 @@
                 <h6 class="text-xl font-bold">Class</h6>
                 <h6 class="text-xl font-bold">Price</h6>
               </div>
-              
+
               <hr class="border-dashed mb-4" />
               <div id="select-container" class="mb-4 select-container"></div>
               <hr class="mb-4" />
@@ -407,26 +417,38 @@
                 <h6 class="text-xl font-bold">Discount</h6>
                 <h6 id="discount" class="text-xl font-bold">0</h6>
               </div>
-              <div id="coupon-section" class="bg-white p-5 flex items-center rounded-lg my-4">
+              
+              <div
+                id="coupon-section"
+                class="bg-white p-5 flex items-center rounded-lg my-4"
+              >
                 <input
                   disabled="ture"
                   id="coupon-input"
                   type="text"
                   placeholder="Type here"
                   class="input border-none input-accent w-full max-w-xs"
-                /><button id="apply-btn" disabled="true" class="btn bg-[#1DD100] lg:text-xl text-white apply">
+                /><button
+                  id="apply-btn"
+                  disabled="true"
+                  class="btn bg-[#1DD100] lg:text-xl text-white apply"
+                >
                   Apply
                 </button>
               </div>
               <div class="flex justify-between">
-                <h6  class="text-xl font-bold">Grand Total</h6>
+                <h6 class="text-xl font-bold">Grand Total</h6>
                 <h6 id="grand-total" class="text-xl font-bold">0</h6>
+              </div>
+              <div class="flex justify-between text-[#d10a00] my-4">
+                <h6 id="limit-reached" class="font-light"></h6>
               </div>
             </div>
             <!--inputs-->
             <div class="inputs mt-8 space-y-6">
               <h6 class="text-xl font-bold">Passenger Name*</h6>
               <input
+              id="passenger-name"
                 type="text"
                 placeholder="Type here"
                 class="input input-bordered input-success w-full min-w-xs"
@@ -442,13 +464,40 @@
               />
               <h6 class="text-xl font-bold">Email</h6>
               <input
+                id="passenger-email"
                 type="text"
                 placeholder="Type here"
                 class="input input-bordered input-success w-full min-w-xs"
               />
-              <button id="next-btn" disabled="true" class="btn w-full bg-[#1DD100] text-xl text-white">
+              <button
+                id="next-btn"
+                disabled="true"
+                class="btn w-full bg-[#1DD100] text-xl text-white"
+              >
                 Next
               </button>
+              <div>
+                <!-- Modal & Modal Background-->
+                <div id="modal-container">
+                  <div
+                    id="modal"
+                    class="rounded-2xl flex flex-col items-center animate-none text-center space-y-5"
+                  >
+                    <img src="./images/success.png" alt="" />
+                    <h6 class="text-2xl font-bold">
+                      Paribahan: Embark on a Tranquil Journey,<br />
+                      Where the Road Embraces the Skies.
+                    </h6>
+                    <p class="text-xl text-gray-500">
+                      You will shortly recieve the confirmation <br />
+                      and a copy of our ticket, travle safe.
+                    </p>
+                    <div class="btn bg-[#1DD100]" id="close-btn">
+                      &times; Continue
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="flex justify-between">
                 <p class="border-b cursor-pointer">Terms and Condition</p>
                 <p class="border-b cursor-pointer">Cancelation policy</p>
